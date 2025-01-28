@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-n-8 text-n-1 text-base;
+  }
+}
+
+.rotate-45 {
+  @apply rotate-[45deg];
+}
+
+.rotate-90 {
+  @apply rotate-[90deg];
+}
+
+.rotate-135 {
+  @apply rotate-[135deg];
+}
+
+.rotate-180 {
+  @apply rotate-[180deg];
+}
+
+.rotate-225 {
+  @apply rotate-[225deg];
+}
+
+.rotate-270 {
+  @apply rotate-[270deg];
+}
+
+.rotate-315 {
+  @apply rotate-[315deg];
+}
+
+.rotate-360 {
+  @apply rotate-[360deg];
+}
+
+.-rotate-45 {
+  @apply rotate-[-45deg];
+}
+
+.-rotate-90 {
+  @apply rotate-[-90deg];
+}
+
+.-rotate-135 {
+  @apply rotate-[-135deg];
+}
+
+.-rotate-180 {
+  @apply rotate-[-180deg];
+}
+
+.-rotate-225 {
+  @apply rotate-[-225deg];
+}
+
+.-rotate-270 {
+  @apply rotate-[-270deg];
+}
+
+.-rotate-315 {
+  @apply rotate-[-315deg];
+}
+
+.-rotate-360 {
+  @apply rotate-[-360deg];
+}
+
+.arrow-1 {
+  width: 800px;
+  height: 30px;
+  display: flex;
+  position: relative;
+}
+
+.arrow-1:before {
+  opacity: 0.3;
+  content: "";
+  background: #fef987;
+  width: 8px; /* Adjust the width of the arrow */
+  height: 10px; /* Adjust the height of the arrow */
+  clip-path: polygon(
+    0 6px,
+    calc(100% - 8px) 6px,
+    calc(100% - 8px) 0,
+    100% 50%,
+    calc(100% - 8px) 100%,
+    calc(100% - 8px) calc(100% - 6px),
+    0 calc(100% - 6px)
+  ); /* Adjust the clip-path to maintain the arrow shape */
+  animation: a1 1s infinite linear;
+}
+
+.arrow-1:after {
+  content: "";
+  position: absolute;
+  top: -5px; /* Adjust the vertical position of the glow */
+  left: -5px; /* Adjust the horizontal position of the glow */
+  width: 20px; /* Adjust the width of the glow */
+  height: 20px; /* Adjust the height of the glow */
+  background: rgba(
+    254,
+    249,
+    135,
+    0.9
+  ); /* Adjust the color and opacity of the glow */
+  border-radius: 50%;
+  animation: glow 1s infinite linear;
+}
+
+@keyframes a1 {
+  90%,
+  100% {
+    flex-grow: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px 5px rgba(254, 249, 135, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(254, 249, 135, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px 5px rgba(254, 249, 135, 0.8);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease forwards;
+}
